@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.AppBarLayout
+    android:id="@+id/app_bar_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="45dp">
+    <FrameLayout
+        android:id="@+id/flToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary">
+            <!-- 返回按钮
+                 牛逼啊,设置这样
+            -->
+            <LinearLayout
+                android:layout_marginLeft="25dp"
+                android:orientation="vertical"
+                android:id="@+id/llToolbarTitle"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/tvToolbarTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="弹出框"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    android:visibility="visible"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </FrameLayout>
+</android.support.design.widget.AppBarLayout>

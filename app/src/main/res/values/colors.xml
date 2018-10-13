@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#313131</color>
+    <color name="colorPrimaryDark">#313131</color>
+    <color name="colorAccent">#7e7e7e</color>
+    <color name="accent">#DD2C00</color>
+
+    <color name="red0">#ff0000</color>
+    <color name="black">#000</color>
+
+    <color name="light_red">#f15353</color>//京东红
+    <color name="select_light_red">#f03f3f</color>//京东红:选中背景颜色
+    <color name="yellow">#FFC125</color>
+    <color name="select_yellow">#f2b350</color>//选中黄色
+
+</resources>

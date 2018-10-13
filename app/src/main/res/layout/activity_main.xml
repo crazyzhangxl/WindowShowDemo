@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.example.windowshowdemo.MainActivity">
+<!-- 内容布局 -->
+<LinearLayout
+    android:fitsSystemWindows="true"
+    android:background="@color/colorPrimary"
+    android:id="@+id/llContent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        layout="@layout/toolbar"/>
+    <LinearLayout
+        android:background="#fff"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:text="Dialog形式"
+            android:id="@+id/btnDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="DialogFragment形式"
+            android:id="@+id/btnDgFm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="普通布局形式"
+            android:id="@+id/normalShow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center_horizontal"
+            android:text="区域"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="喜好"
+            android:id="@+id/tvHobby"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="选择"
+            android:id="@+id/tvChoose"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
+<!-- 弹出框布局 上部分为灰色-->
+<RelativeLayout
+    android:id="@+id/rlMenu"
+    android:background="#32000000"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone">
+    <ScrollView
+        android:id="@+id/svMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:layout_alignParentBottom="true"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvSaveToPhone"
+                android:textSize="16sp"
+                android:gravity="center_vertical"
+                android:text="保存到手机"
+                android:textColor="#7e7e7e"
+                android:layout_marginLeft="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="51dp" />
+            <TextView
+                android:id="@+id/openQrcode"
+                android:textSize="16sp"
+                android:gravity="center_vertical"
+                android:text="打开二维码"
+                android:textColor="#7e7e7e"
+                android:layout_marginLeft="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="51dp" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
