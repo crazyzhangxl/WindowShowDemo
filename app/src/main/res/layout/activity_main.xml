@@ -35,6 +35,12 @@ tools:context="com.example.windowshowdemo.MainActivity">
             android:id="@+id/normalShow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <Button
+            android:textAllCaps="false"
+            android:text="BottomSheetDialog"
+            android:id="@+id/btnSheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/tvAddress"
             android:layout_marginTop="25dp"

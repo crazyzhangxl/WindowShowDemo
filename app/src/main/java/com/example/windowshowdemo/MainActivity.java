@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mBtnDialog;
     private Button mBtnDgFm;
     private Button mBtnNormalShow;
+    private Button mBtnSheet;
     private TextView mTvHobby;
     private TextView mTvAddress;
     private TextView mTvChoose;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private RelativeLayout mRlMenu;
     private TextView mTvSaveToPhone;
     private TextView mTvOpenQRCode;
+    private BottomDialog mBottomDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTvSaveToPhone.setOnClickListener(this);
         mTvOpenQRCode.setOnClickListener(this);
         mRlMenu.setOnClickListener(this);
+        mBtnSheet.setOnClickListener(this);
 
     }
 
@@ -66,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mSvMenu = findViewById(R.id.svMenu);
         mTvSaveToPhone = findViewById(R.id.tvSaveToPhone);
         mTvOpenQRCode = findViewById(R.id.openQrcode);
+        mBtnSheet = findViewById(R.id.btnSheet);
     }
 
     @Override
@@ -95,9 +99,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.rlMenu:
                 hideBottomMenu();
                 break;
+            case R.id.btnSheet:
+                showSheetDialog();
+                break;
             default:
                 break;
         }
+    }
+
+    /**
+     * 展开底部的Dialog 这种Dialog效果真的好
+     */
+    private void showSheetDialog() {
+        mBottomDialog = new BottomDialog(this,0,true);
+        View view = LayoutInflater.from(this).inflate(R.layout.bottom_purchase, null, false);
+        mBottomDialog.setContentView(view);
+        // 牛逼啊
+        mBottomDialog.getDelegate().findViewById(android.support.design.R.id.design_bottom_sheet)
+                .setBackgroundColor(getResources().getColor(android.R.color.transparent));
+
+        mBottomDialog.show();
     }
 
     private void showPurchaseView() {
