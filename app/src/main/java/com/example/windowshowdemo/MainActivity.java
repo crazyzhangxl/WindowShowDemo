@@ -1,6 +1,7 @@
 package com.example.windowshowdemo;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -15,6 +16,9 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 /**
  * @author zxl on 2018/07/25.
  *         discription: 这是一个对Dialog弹出框的总结学习
@@ -28,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mBtnDgFm;
     private Button mBtnNormalShow;
     private Button mBtnSheet;
+    private Button mBtnPopShow;
+    private Button mBtnTopShow;
     private TextView mTvHobby;
     private TextView mTvAddress;
     private TextView mTvChoose;
@@ -37,10 +43,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView mTvOpenQRCode;
     private BottomDialog mBottomDialog;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         // 设置沉浸式状态栏
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         initView();
@@ -55,6 +63,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTvOpenQRCode.setOnClickListener(this);
         mRlMenu.setOnClickListener(this);
         mBtnSheet.setOnClickListener(this);
+        mBtnPopShow.setOnClickListener(this);
+        mBtnTopShow.setOnClickListener(this);
 
     }
 
@@ -70,6 +80,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTvSaveToPhone = findViewById(R.id.tvSaveToPhone);
         mTvOpenQRCode = findViewById(R.id.openQrcode);
         mBtnSheet = findViewById(R.id.btnSheet);
+        mBtnPopShow = findViewById(R.id.popShow);
+        mBtnTopShow = findViewById(R.id.topShow);
     }
 
     @Override
@@ -102,6 +114,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnSheet:
                 showSheetDialog();
                 break;
+            case R.id.popShow:
+                startActivity(new Intent(MainActivity.this,PopNiceActivity.class));
+                break;
+            case R.id.topShow:
+                startActivity(new Intent(MainActivity.this,TopViewActivity.class));
+                break;
             default:
                 break;
         }
@@ -114,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBottomDialog = new BottomDialog(this,0,true);
         View view = LayoutInflater.from(this).inflate(R.layout.bottom_purchase, null, false);
         mBottomDialog.setContentView(view);
-        // 牛逼啊
+        // 设置背景为透明色 那么白色的就能呈现出来了
         mBottomDialog.getDelegate().findViewById(android.support.design.R.id.design_bottom_sheet)
                 .setBackgroundColor(getResources().getColor(android.R.color.transparent));
 
@@ -193,4 +211,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         super.onBackPressed();
     }
+
 }

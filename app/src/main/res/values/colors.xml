@@ -14,4 +14,10 @@
     <color name="yellow">#FFC125</color>
     <color name="select_yellow">#f2b350</color>//选中黄色
 
+
+    <color name="transparent_normal">#F0FFFFFF</color>
+    <color name="transparent_selected">#E0DBDBDB</color>
+    <color name="colorTransparent">#00000000</color>
+
+
 </resources>
