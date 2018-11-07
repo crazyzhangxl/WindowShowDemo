@@ -3,7 +3,7 @@
 
 本文将介绍的是从底部弹出窗体以供用户进行交互的例子，本文将介绍使用Dialog,View和DialogFragment的方式分别来进行实现。也是仿制了58同城的弹出喜好的UI显示和交互。弹出框真的是很常见的，在安卓中有广泛的用途，故而有必要对其进行好好的梳理，后面使用起来也能够得心应手。<br>
 
-[apk下载](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/apk/app-debug.apk)<br><br>
+[apk下载](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/apk/app-debug.apk)<br>
 
 ### 运行效果<br>
 ![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/1.png)
@@ -343,6 +343,6 @@ showEnjoyDialogFragment.show(getFragmentManager(), "showEnjoyDialogFragment");
 
 总结：
 
-好了，以上主要是起一个笔记的作用，希望对读者有一定的帮助，写的不对的地方请多多指教，谢谢
+好了，以上主要是起一个笔记的作用，希望对读者有一定的帮助，写的不对的地方请多多指教，谢谢<br>
 
-博客地址：https://blog.csdn.net/crazyZhangxl/article/details/81195593
+[博客地址](https://blog.csdn.net/crazyZhangxl/article/details/81195593)
