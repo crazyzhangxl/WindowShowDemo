@@ -6,7 +6,7 @@
 [apk下载](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/apk/app-debug.apk)<br>
 
 ### 运行效果<br>
-![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/1.png)
+![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/1.png) 
 ![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/2.png)
 ![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/3.png)
 ![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/4.png)
