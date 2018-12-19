@@ -1,105 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:clipChildren="false"
-    android:layout_height="wrap_content">
-    <!-- 该布局承载着 超出父布局的控件的部分的显示-->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="40dp"/>
+    android:id="@+id/rootView"
+    android:layout_height="match_parent">
+    <!-- 注意  clipChildren 根布局 false-->
     <LinearLayout
+        android:id="@+id/llInner"
+        android:layout_alignParentBottom="true"
         android:background="#fff"
-        android:id="@+id/rl_1"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="128dp">
-        <android.support.v7.widget.CardView
-            android:id="@+id/cd"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="10dp"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_width="120dp"
-            android:layout_height="150dp"
-            card_view:cardBackgroundColor="#FFFFFF"
-            card_view:cardCornerRadius="4dp"
-            card_view:cardElevation="2dp"
-            card_view:cardUseCompatPadding="true">
-            <ImageView
-                android:src="@drawable/shop"
-                android:scaleType="fitXY"
-                android:layout_width="120dp"
-                android:layout_height="match_parent"/>
-        </android.support.v7.widget.CardView>
+        android:clipChildren="false"
+        android:layout_height="wrap_content">
+        <!-- 注意 clipChildren  = false-->
+        <!-- 注意 你裁剪的是哪个布局那么他的父亲布局得有该属性-->
         <LinearLayout
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="5dp"
-            android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content">
-            <TextView
-                android:text="￥109"
-                android:textColor="#f00"
-                android:textSize="22sp"
-                android:id="@+id/tv_pay_deserve"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+            android:id="@+id/rl_1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="128dp">
+            <android.support.v7.widget.CardView
+                android:id="@+id/cd"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="10dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_width="120dp"
+                android:layout_height="150dp"
+                card_view:cardBackgroundColor="#FFFFFF"
+                card_view:cardCornerRadius="4dp"
+                card_view:cardElevation="2dp"
+                card_view:cardUseCompatPadding="true">
+                <ImageView
+                    android:src="@drawable/shop"
+                    android:scaleType="fitXY"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"/>
+            </android.support.v7.widget.CardView>
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="5dp"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:id="@+id/tv_des"
-                    android:textColor="#C000"
-                    android:textSize="14sp"
-                    android:text="对商品的简要的描述：这件商品好好啊，欢迎来购买"
-                    android:lines="2"
+                    android:text="￥109"
+                    android:textColor="#f00"
+                    android:textSize="22sp"
+                    android:id="@+id/tv_pay_deserve"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tv_des"
+                        android:textColor="#C000"
+                        android:textSize="14sp"
+                        android:text="对商品的简要的描述：这件商品好好啊，欢迎来购买"
+                        android:lines="2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
 
             </LinearLayout>
-
+            <ImageView
+                android:id="@+id/iv_back"
+                android:padding="10dp"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/buy_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
-        <ImageView
-            android:id="@+id/iv_back"
-            android:padding="10dp"
-            android:layout_alignParentRight="true"
-            android:src="@mipmap/buy_delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <View
-        android:background="#fff"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"/>
-    <LinearLayout
-        android:background="#fff"
-        android:layout_width="match_parent"
-        android:layout_height="45dp">
+        <LinearLayout
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
 
-        <Button
-            android:id="@+id/add_cart_btn"
-            android:layout_weight="1.0"
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:text="加入购物车"
-            android:textColor="#fff"
-            android:background="@drawable/button_yellow_selector"
-            android:layout_alignParentLeft="true"
-            />
+            <Button
+                android:id="@+id/add_cart_btn"
+                android:layout_weight="1.0"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:text="加入购物车"
+                android:textColor="#fff"
+                android:background="@drawable/button_yellow_selector"
+                android:layout_alignParentLeft="true"
+                />
 
-        <Button
-            android:id="@+id/buy_btn"
-            android:layout_weight="1.0"
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:text="立即购买"
-            android:textColor="#fff"
-            android:background="@drawable/button_selector"
-            android:layout_alignParentRight="true"
-            />
+            <Button
+                android:id="@+id/buy_btn"
+                android:layout_weight="1.0"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:text="立即购买"
+                android:textColor="#fff"
+                android:background="@drawable/button_selector"
+                android:layout_alignParentRight="true"
+                />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

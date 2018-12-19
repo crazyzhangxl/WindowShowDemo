@@ -144,6 +144,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Dialog dialog = new Dialog(this,R.style.MyDialog);
         // 加载dialog布局view
         View purchase = LayoutInflater.from(this).inflate(R.layout.dialog_purchase, null);
+        initPurchaseViews(purchase,dialog);
         // 设置外部点击 取消dialog
         dialog.setCancelable(true);
         // 获得窗体对象
@@ -160,6 +161,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         window.setAttributes(lp);
         dialog.setContentView(purchase);
         dialog.show();
+    }
+
+    private void initPurchaseViews(View purchase, final Dialog dialog) {
+        purchase.findViewById(R.id.rootView).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        purchase.findViewById(R.id.llInner).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     private void showBottomMenu() {
