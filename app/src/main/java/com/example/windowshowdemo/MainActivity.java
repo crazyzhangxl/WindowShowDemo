@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button mBtnDialog;
     private Button mBtnDgFm;
-    private Button mBtnNormalShow;
+    private Button mBtnNormalShow,btnPhoto;
     private Button mBtnSheet;
     private Button mBtnPopShow;
     private Button mBtnTopShow;
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private RelativeLayout mRlMenu;
     private TextView mTvSaveToPhone;
     private TextView mTvOpenQRCode;
-    private BottomDialog mBottomDialog;
+    private BottomDialog mBottomDialog,mBottomPhotoDialog;
 
 
     @Override
@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtnSheet.setOnClickListener(this);
         mBtnPopShow.setOnClickListener(this);
         mBtnTopShow.setOnClickListener(this);
+        btnPhoto.setOnClickListener(this);
 
     }
 
@@ -82,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtnSheet = findViewById(R.id.btnSheet);
         mBtnPopShow = findViewById(R.id.popShow);
         mBtnTopShow = findViewById(R.id.topShow);
+        btnPhoto = findViewById(R.id.btnPhoto);
     }
 
     @Override
@@ -120,6 +122,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.topShow:
                 startActivity(new Intent(MainActivity.this,TopViewActivity.class));
                 break;
+            case R.id.btnPhoto:
+                showPhotoDialog();
+                break;
             default:
                 break;
         }
@@ -138,6 +143,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mBottomDialog.show();
     }
+
+    private void showPhotoDialog(){
+        mBottomPhotoDialog = new BottomDialog(this,0,true);
+        View view = LayoutInflater.from(this).inflate(R.layout.bottom_photo, null, false);
+        mBottomPhotoDialog.setContentView(view);
+        // 设置背景为透明色 那么白色的就能呈现出来了
+        mBottomPhotoDialog.getDelegate().findViewById(android.support.design.R.id.design_bottom_sheet)
+                .setBackgroundColor(getResources().getColor(android.R.color.transparent));
+
+        mBottomPhotoDialog.show();
+    }
+
 
     private void showPurchaseView() {
         // 以特定的风格创建一个dialog
