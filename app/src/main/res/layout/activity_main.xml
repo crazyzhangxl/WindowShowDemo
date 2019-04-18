@@ -50,6 +50,11 @@ tools:context="com.example.windowshowdemo.MainActivity">
                 android:id="@+id/btnPhoto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+            <Button
+                android:text="仿咸鱼底部"
+                android:id="@+id/like_yu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
         <Button

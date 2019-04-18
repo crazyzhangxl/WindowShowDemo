@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:layout_centerInParent="true"
+            android:id="@+id/tvDes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="#33666666" />
+    <!-- 出现在这个center这里...-->
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|center"
+        android:background="#eee"
+        android:clipChildren="false"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:drawablePadding="6dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="闲鱼"
+            android:textColor="@color/navigator_color" />
+
+        <RadioButton
+            android:id="@+id/rb_pond"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:drawablePadding="6dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="鱼塘"
+            android:textColor="@color/navigator_color" />
+
+        <!-- 这里直接给其设置高度 让其超过父亲布局的56dp-->
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="110dp">
+            <ImageView
+                android:id="@+id/rbAdd"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/comui_tab_post" />
+            <TextView
+                android:textColor="@color/black"
+                android:text="发布"
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <RadioButton
+            android:id="@+id/rb_message"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:drawablePadding="6dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="消息"
+            android:textColor="@color/navigator_color" />
+
+        <RadioButton
+            android:id="@+id/rb_me"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:drawablePadding="6dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="我的"
+            android:textColor="@color/navigator_color" />
+    </RadioGroup>
+</LinearLayout>

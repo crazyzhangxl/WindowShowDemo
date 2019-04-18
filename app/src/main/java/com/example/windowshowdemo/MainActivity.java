@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mBtnSheet;
     private Button mBtnPopShow;
     private Button mBtnTopShow;
+    private Button like_yu;
     private TextView mTvHobby;
     private TextView mTvAddress;
     private TextView mTvChoose;
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtnPopShow.setOnClickListener(this);
         mBtnTopShow.setOnClickListener(this);
         btnPhoto.setOnClickListener(this);
+        like_yu.setOnClickListener(this);
 
     }
 
@@ -84,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtnPopShow = findViewById(R.id.popShow);
         mBtnTopShow = findViewById(R.id.topShow);
         btnPhoto = findViewById(R.id.btnPhoto);
+        like_yu = findViewById(R.id.like_yu);
     }
 
     @Override
@@ -124,6 +127,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnPhoto:
                 showPhotoDialog();
+                break;
+            case R.id.like_yu:
+                startActivity(new Intent(MainActivity.this,LikeXianYuActivity.class));
                 break;
             default:
                 break;
