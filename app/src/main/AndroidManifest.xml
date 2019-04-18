@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LikeXianYuActivity"></activity>
+        <activity android:name=".xianyu.PubActivity"
+            android:theme="@style/PubTheme"></activity>
+        <activity android:name=".LikeXianYuActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

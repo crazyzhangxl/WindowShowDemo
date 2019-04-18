@@ -10,6 +10,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.windowshowdemo.xianyu.PubActivity;
+
 /**
  * 仿咸鱼底部菜单界面效果
  */
@@ -55,7 +57,7 @@ public class LikeXianYuActivity extends AppCompatActivity {
         mIvAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(LikeXianYuActivity.this, "点击了添加", Toast.LENGTH_SHORT).show();
+                PubActivity.show(LikeXianYuActivity.this);
             }
         });
 
