@@ -13,7 +13,7 @@
 <br>
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/5.png)
 &#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/6.png)<br><br>
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/xianyu1.png)
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/xianyu.png)
 
 2.1 Dialog形式
 
