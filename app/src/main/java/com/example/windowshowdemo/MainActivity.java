@@ -16,8 +16,6 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * @author zxl on 2018/07/25.
