@@ -8,14 +8,14 @@
 ### 运行效果<br>
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/1.png)
 &#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/2.png)<br>
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/3.png)
-&#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/4.png)
-<br>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/4.png)<br>
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/5.png)
 &#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/6.png)<br><br>
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/xianyu.png)
-&#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/ios.png)<br><br>
-&#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/xianyu2.gif)<br><br>
+&#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/ios.png)
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;     
+      &#160;&#160;&#160;&#160;&#160;&#8194;&#8194;&#8194;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/xianyu2.gif)<br><br>
 2.1 Dialog形式
 
 注释写的还是很清晰的，如下。
@@ -348,5 +348,6 @@ showEnjoyDialogFragment.show(getFragmentManager(), "showEnjoyDialogFragment");
 总结：
 
 好了，以上主要是起一个笔记的作用，希望对读者有一定的帮助，写的不对的地方请多多指教，谢谢<br>
+如上还增加了一个咸鱼底部凹凸的例子，也是学到了许多东西。<br>
 
 [博客地址](https://blog.csdn.net/crazyZhangxl/article/details/81195593)
