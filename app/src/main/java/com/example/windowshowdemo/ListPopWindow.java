@@ -1,5 +1,6 @@
 package com.example.windowshowdemo;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -15,6 +16,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -37,7 +39,8 @@ import java.util.List;
 /**
  * @author zxl on 2018/6/28.
  *         discription: 自定义由上方弹出的窗体
- *          PopupWindow哦 哈哈
+ *          PopupWindow哦
+ *          优势是可让其居于某个特定的布局下面比较不错
  */
 
 public class ListPopWindow extends PopupWindow{
@@ -63,6 +66,7 @@ public class ListPopWindow extends PopupWindow{
         this.setContentView(window);
         this.setWidth(UIUtils.getScreenWidth(context));
         this.setHeight(UIUtils.getScreenHeight(context));
+        //this.setWindowLayoutMode(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
         this.setAnimationStyle(R.style.WindowStyle);
         this.setFocusable(true);
         this.setOutsideTouchable(true);
@@ -148,7 +152,13 @@ public class ListPopWindow extends PopupWindow{
             if (Build.VERSION.SDK_INT >= 24) {
                 Rect rect = new Rect();
                 anchor.getGlobalVisibleRect(rect);
-                int h = anchor.getResources().getDisplayMetrics().heightPixels - rect.bottom;
+                int size = 0;
+                // 适配全面屏....
+                // 解决全面屏手机使用顶部弹窗带来的问题
+                if (DisplayHelper.isNavigationBarExist((Activity) context)){
+                    size = DisplayHelper.getNavMenuHeight(context);
+                }
+                int h = DisplayHelper.getRealScreenSize(context)[1] - rect.bottom - size ;
                 setHeight(h);
             }
             super.showAsDropDown(anchor);
