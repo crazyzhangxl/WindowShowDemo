@@ -27,12 +27,12 @@
                 android:layout_gravity="bottom"
                 android:layout_marginLeft="10dp"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:layout_width="120dp"
-                android:layout_height="150dp"
                 card_view:cardBackgroundColor="#FFFFFF"
                 card_view:cardCornerRadius="4dp"
-                card_view:cardElevation="2dp"
-                card_view:cardUseCompatPadding="true">
+                card_view:cardElevation="5dp"
+                card_view:cardUseCompatPadding="true"
+                android:layout_width="120dp"
+                android:layout_height="150dp">
                 <ImageView
                     android:src="@drawable/shop"
                     android:scaleType="fitXY"

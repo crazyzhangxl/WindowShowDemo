@@ -43,4 +43,10 @@ public class TopViewActivity extends AppCompatActivity {
             mFilterDropDownDialog = new FilterDropDownDialog(this,mFragmentContent,mTvTitle);
         }
     }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(0,0);
+    }
 }

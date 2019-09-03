@@ -46,7 +46,6 @@ public class PubActivity extends AppCompatActivity implements View.OnClickListen
                     | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(Color.TRANSPARENT);
-
         }
         getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
     }
@@ -75,7 +74,6 @@ public class PubActivity extends AppCompatActivity implements View.OnClickListen
         mLays.add(mLlArticle);
         mLays.add(mLlBlog);
         mLays.add(mLlTweet);
-
         mLlArticle.setOnClickListener(this);
         mLlBlog.setOnClickListener(this);
         mLlTweet.setOnClickListener(this);
@@ -167,7 +165,6 @@ public class PubActivity extends AppCompatActivity implements View.OnClickListen
             case R.id.rl_main:
                 dismiss();
                 break;
-
         }
     }
 }

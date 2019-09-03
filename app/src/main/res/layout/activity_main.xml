@@ -56,17 +56,32 @@ tools:context="com.example.windowshowdemo.MainActivity">
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:text="顶部弹框"
+                android:id="@+id/popShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:text="顶部弹框View"
+                android:id="@+id/topShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:text="更新"
+                android:id="@+id/btnUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
 
-        <Button
-            android:text="顶部弹框"
-            android:id="@+id/popShow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <Button
-            android:text="顶部弹框View"
-            android:id="@+id/topShow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/tvAddress"
             android:layout_marginTop="25dp"

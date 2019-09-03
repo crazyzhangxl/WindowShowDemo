@@ -98,7 +98,9 @@ public class ListPopWindow extends PopupWindow{
             @Override
             protected void convert(BaseViewHolder helper, GalleryBean item) {
                 helper.setText(R.id.tvTitleName,item.getTitle());
+
                 helper.itemView.setSelected(item.isChecked());
+
                 ImageView view = helper.getView(R.id.first_image);
                 Glide.with(context)
                         .asBitmap()
@@ -129,6 +131,8 @@ public class ListPopWindow extends PopupWindow{
                 }
             }
         });
+
+
         recyclerView.setAdapter(adapter);
         id_ll_root.setOnClickListener(new View.OnClickListener() {
             @Override

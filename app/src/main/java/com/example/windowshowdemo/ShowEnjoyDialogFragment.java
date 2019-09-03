@@ -1,9 +1,11 @@
 package com.example.windowshowdemo;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,13 +13,16 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.example.windowshowdemo.model.EnjoyBean;
 import com.silencedut.router.Router;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -32,20 +37,66 @@ public class ShowEnjoyDialogFragment extends DialogFragment{
     private RecyclerView mRv;
     private TextView mTVSubmit;
     private TextView mTvFive;
-    private List<String> mList = new ArrayList<>();
-    private List<Integer> mSelected = new ArrayList<>();
     private Context mContext;
-    private BaseQuickAdapter<String,BaseViewHolder> mBaseAdapter;
-    private String mResult;
-    public static String[] ENJOY_ARRAYS = {"聚会","高科技","运动健身","购物狂",
-            "理财","影视","音乐","自驾","读书","画画","DIY","游戏","涨知识",
-            "旅游","汽车","居家","cosplay","其他"};
+    private BaseQuickAdapter<EnjoyBean,BaseViewHolder> mBaseAdapter;
+    private List<EnjoyBean> mEnjoyBeans = new ArrayList<>();
     private static final String HOBBY_KEY_ENJOY = "hobby_key_enjoy";
-
+    private EnsureListener mEnsureListener;
+    public interface EnsureListener{
+        void onEnsureData(List<EnjoyBean> mList);
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // 设置数据...
+        _initData();
+        Bundle arguments = getArguments();
+        if (arguments != null) {
+            List<EnjoyBean> enjoyBeans = (List<EnjoyBean>) arguments.getSerializable("list");
+            if (enjoyBeans.size() == 0){
+                return;
+            }
+            for (int i=0;i<mEnjoyBeans.size();i++){
+                int id = mEnjoyBeans.get(i).getId();
+                for (int j=0;j<enjoyBeans.size();j++){
+                    if (enjoyBeans.get(j).getId() == id){
+                        mEnjoyBeans.get(i).setSelected(true);
+                        break;
+                    }
+                }
+            }
+        }
+    }
 
+    // 初始化数据
+    private void _initData() {
+        mEnjoyBeans.add(new EnjoyBean(0,"聚会"));
+        mEnjoyBeans.add(new EnjoyBean(1,"高科技"));
+        mEnjoyBeans.add(new EnjoyBean(2,"运动健身"));
+        mEnjoyBeans.add(new EnjoyBean(3,"购物狂"));
+        mEnjoyBeans.add(new EnjoyBean(4,"理财"));
+        mEnjoyBeans.add(new EnjoyBean(5,"影视"));
+        mEnjoyBeans.add(new EnjoyBean(6,"音乐"));
+        mEnjoyBeans.add(new EnjoyBean(7,"自驾"));
+        mEnjoyBeans.add(new EnjoyBean(8,"读书"));
+        mEnjoyBeans.add(new EnjoyBean(9,"画画"));
+        mEnjoyBeans.add(new EnjoyBean(10,"DIY"));
+        mEnjoyBeans.add(new EnjoyBean(11,"游戏"));
+        mEnjoyBeans.add(new EnjoyBean(12,"涨知识"));
+        mEnjoyBeans.add(new EnjoyBean(13,"旅游"));
+    }
+
+    public static void showFragment(Activity activity,List<EnjoyBean> enjoys,EnsureListener ensureListener){
+        ShowEnjoyDialogFragment enjoyDialogFragment = new ShowEnjoyDialogFragment();
+        enjoyDialogFragment.setEnsureListener(ensureListener);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("list", (Serializable) enjoys);
+        enjoyDialogFragment.setArguments(bundle);
+        enjoyDialogFragment.show(activity.getFragmentManager(),"enjoy");
+    }
+
+    private void setEnsureListener(EnsureListener ensureListener){
+        this.mEnsureListener = ensureListener;
     }
 
     @Override
@@ -64,25 +115,11 @@ public class ShowEnjoyDialogFragment extends DialogFragment{
         lp.width = WindowManager.LayoutParams.MATCH_PARENT; // 宽度持平
         lp.height = getActivity().getWindowManager().getDefaultDisplay().getHeight() * 2/ 3;
         window.setAttributes(lp);
-        getDataFromBefore();
         initView(dialog);
         // 窗口初始化后 请求网络数据
         return dialog;
     }
 
-    private void getDataFromBefore() {
-        mList = Arrays.asList(ENJOY_ARRAYS);
-        Bundle bundle = getArguments();
-        if (bundle != null){
-            ArrayList<String> enjoy = bundle.getStringArrayList(HOBBY_KEY_ENJOY);
-            if (enjoy == null || enjoy.size() ==0){
-                return;
-            }
-            for (String str:enjoy){
-                mSelected.add(mList.indexOf(str));
-            }
-        }
-    }
 
     private void initView(Dialog dialog) {
         mRv =  (RecyclerView)dialog.findViewById(R.id.rv);
@@ -90,25 +127,26 @@ public class ShowEnjoyDialogFragment extends DialogFragment{
         mTvFive =(TextView)dialog.findViewById(R.id.tvFive);
         setAdapter();
         setListener();
-
     }
 
     private void setListener() {
         mTVSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mSelected.size() == 0){
+                if (selectNum() == 0){
                     Toast.makeText(mContext, "客官请至少选择一个兴趣", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                StringBuilder sb = new StringBuilder();
-                ArrayList<String> mArrays = new ArrayList<>();
-                for (Integer integer:mSelected){
-                    mArrays.add(mList.get(integer));
-                    sb.append(mList.get(integer)).append(",");
+                List<EnjoyBean> mSelectList = new ArrayList<>();
+                for (int i=0;i<mEnjoyBeans.size();i++){
+                    if (mEnjoyBeans.get(i).isSelected()){
+                        mSelectList.add(mEnjoyBeans.get(i));
+                    }
                 }
-                mResult = sb.toString();
-                Toast.makeText(mContext, mResult, Toast.LENGTH_SHORT).show();
+                if (mEnsureListener != null){
+                    mEnsureListener.onEnsureData(mSelectList);
+                }
+                // 关闭
                 dismiss();
             }
         });
@@ -124,48 +162,50 @@ public class ShowEnjoyDialogFragment extends DialogFragment{
             mRv.setLayoutManager(layoutManager);
             mRv.addItemDecoration
                     (new GridSpacingItemDecoration(3, getResources().getDimensionPixelSize(R.dimen.common_dimension_10), true));
-            mBaseAdapter = new BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_enjoy_text,mList) {
+            mBaseAdapter = new BaseQuickAdapter<EnjoyBean, BaseViewHolder>(R.layout.item_enjoy_text,mEnjoyBeans) {
                 @Override
-                protected void convert(BaseViewHolder helper, String item) {
-                    final int position = helper.getAdapterPosition();
+                protected void convert(BaseViewHolder helper, EnjoyBean item) {
                     final TextView tvEnjoy = helper.getView(R.id.tvEnjoy);
-                    if (mSelected != null&&mSelected.size()!=0 && mSelected.contains((Integer)position)){
+                    if (item.isSelected()){
                         tvEnjoy.setTextColor(ContextCompat.getColor(mContext,R.color.red0));
                         tvEnjoy.setBackground(ContextCompat.getDrawable(mContext,R.drawable.bg_enjoy_pink));
+                    }else {
+                        tvEnjoy.setTextColor(ContextCompat.getColor(mContext,R.color.black));
+                        tvEnjoy.setBackground(ContextCompat.getDrawable(mContext,R.drawable.bg_enjoy_normal));
                     }
-                    tvEnjoy.setText(item);
-                    tvEnjoy.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            if (mSelected != null && mSelected.size()<=5){
-                                if (mSelected.contains(position)){
-                                    mSelected.remove((Integer)position);
-                                    tvEnjoy.setTextColor(ContextCompat.getColor(mContext,R.color.black));
-                                    tvEnjoy.setBackground(ContextCompat.getDrawable(mContext,R.drawable.bg_enjoy_normal));
-                                }else {
-                                    if (mSelected.size() == 5) {
-                                        Toast.makeText(mContext, "不超过5个", Toast.LENGTH_SHORT).show();
-                                        return;
-                                    }
-                                    mSelected.add(position);
-                                    tvEnjoy.setTextColor(ContextCompat.getColor(mContext,R.color.red0));
-                                    tvEnjoy.setBackground(ContextCompat.getDrawable(mContext,R.drawable.bg_enjoy_pink));
-                                }
-                            }
-                            if (mSelected.size() == 5){
-                                mTvFive.setVisibility(View.VISIBLE);
-                            }else {
-                                mTvFive.setVisibility(View.GONE);
-                            }
-                        }
-                    });
-
+                    tvEnjoy.setText(item.getDescription());
                 }
             };
+
+            // 设置点击事件
+            mBaseAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                    if (selectNum() == 5){
+                        Toast.makeText(mContext, "不超过5个", Toast.LENGTH_SHORT).show();
+                        mTvFive.setVisibility(View.VISIBLE);
+                    }else {
+                        // 设置选中状态...
+                        mTvFive.setVisibility(View.GONE);
+                        mEnjoyBeans.get(position).setSelected(true);
+                        mBaseAdapter.notifyItemChanged(position);
+                    }
+                }
+            });
         }
-        if (mSelected.size() == 5) {
+        if (selectNum() == 5){
             mTvFive.setVisibility(View.VISIBLE);
         }
         mRv.setAdapter(mBaseAdapter);
+    }
+
+    private int selectNum(){
+        int selectSum = 0;
+        for (int i=0;i<mEnjoyBeans.size();i++){
+            if (mEnjoyBeans.get(i).isSelected()){
+                selectSum ++;
+            }
+        }
+        return  selectSum;
     }
 }

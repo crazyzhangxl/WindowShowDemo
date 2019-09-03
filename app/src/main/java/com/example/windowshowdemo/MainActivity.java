@@ -16,6 +16,12 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.example.windowshowdemo.dialogfragment.UpdateFragment;
+import com.example.windowshowdemo.model.EnjoyBean;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * @author zxl on 2018/07/25.
@@ -24,7 +30,7 @@ import android.widget.TextView;
  *         既有系统弹出框Dialog 也有 Fragment形式的 DialogFragment 还有普通的View的形式。 下面就一起来看看吧
  *         
  */
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, ShowEnjoyDialogFragment.EnsureListener {
 
     private Button mBtnDialog;
     private Button mBtnDgFm;
@@ -32,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mBtnSheet;
     private Button mBtnPopShow;
     private Button mBtnTopShow;
-    private Button like_yu;
+    private Button like_yu,btnUpdate;
     private TextView mTvHobby;
     private TextView mTvAddress;
     private TextView mTvChoose;
@@ -41,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView mTvSaveToPhone;
     private TextView mTvOpenQRCode;
     private BottomDialog mBottomDialog,mBottomPhotoDialog;
+    private List<EnjoyBean> mEnjoyBeanList = new ArrayList<>();
 
 
     @Override
@@ -66,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtnTopShow.setOnClickListener(this);
         btnPhoto.setOnClickListener(this);
         like_yu.setOnClickListener(this);
+        btnUpdate.setOnClickListener(this);
 
     }
 
@@ -85,17 +93,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtnTopShow = findViewById(R.id.topShow);
         btnPhoto = findViewById(R.id.btnPhoto);
         like_yu = findViewById(R.id.like_yu);
+        btnUpdate = findViewById(R.id.btnUpdate);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnDgFm:
-                ShowEnjoyDialogFragment showEnjoyDialogFragment = new ShowEnjoyDialogFragment();
-                Bundle bundle = new Bundle();
-                // bundle.putStringArrayList(AppConst.HOBBY_KEY_ENJOY, mHobbyStrList);
-                showEnjoyDialogFragment.setArguments(bundle);
-                showEnjoyDialogFragment.show(getFragmentManager(), "showEnjoyDialogFragment");
+                ShowEnjoyDialogFragment.showFragment(MainActivity.this,mEnjoyBeanList,this);
                 break;
             case R.id.btnDialog:
                 showPurchaseView();
@@ -128,6 +133,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.like_yu:
                 startActivity(new Intent(MainActivity.this,LikeXianYuActivity.class));
+                break;
+            case R.id.btnUpdate:
+                UpdateFragment.showFragment(MainActivity.this);
                 break;
             default:
                 break;
@@ -250,4 +258,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onBackPressed();
     }
 
+    @Override
+    public void onEnsureData(List<EnjoyBean> mList) {
+        mEnjoyBeanList.clear();
+        mEnjoyBeanList.addAll(mList);
+    }
 }
