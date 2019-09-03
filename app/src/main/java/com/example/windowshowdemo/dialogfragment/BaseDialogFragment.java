@@ -20,7 +20,9 @@ import com.example.windowshowdemo.R;
 /**
  * Created by apple on 2019-09-03.
  * description:基础的dialogFragment 抽象类
- * 可以参考的文章: https://www.jianshu.com/p/f2d6e6bc4b77
+ * 参考文章:
+ *    dialogFragment内存泄漏问题:https://www.jianshu.com/p/f2d6e6bc4b77
+ *    android版本更新项目: https://github.com/WVector/AppUpdate
  */
 public abstract class BaseDialogFragment extends DialogFragment {
 
