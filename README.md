@@ -9,7 +9,8 @@
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/1.png)
 &#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/2.png)<br>
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/4.png)<br>
+![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/4.png)
+&#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/update.png)<br>
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/5.png)
 &#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/6.png)<br><br>
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/xianyu.png)
