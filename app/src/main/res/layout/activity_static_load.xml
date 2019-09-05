@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".loading.StaticLoadActivity">
+    <!-- 系统进度条 -->
+
+    <!-- 修改进度条颜色
+         服了,搞来搞去就是一个吊progressBar
+    -->
+    <ProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/progressbar"
+        android:layout_width="36dp"
+        android:indeterminateTint="#59a3f8"
+        android:indeterminateTintMode="src_atop"
+        android:layout_height="36dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleInverse"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:indeterminateBehavior="repeat"
+        android:indeterminateDrawable="@drawable/dialog_loading"
+        android:background="@android:color/transparent" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleInverse"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:indeterminateBehavior="repeat"
+        android:indeterminateDrawable="@drawable/dialog_loading2"
+        android:background="@android:color/transparent" />
+    <ProgressBar
+        style="?android:attr/progressBarStyleInverse"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:indeterminateBehavior="repeat"
+        android:indeterminateDrawable="@drawable/dialog_loading3"
+        android:background="@android:color/transparent" />
+    <ProgressBar
+        style="?android:attr/progressBarStyleInverse"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:indeterminateBehavior="repeat"
+        android:indeterminateDrawable="@drawable/dialog_loading4"
+        android:background="@android:color/transparent" />
+    <ProgressBar
+        style="?android:attr/progressBarStyleInverse"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:indeterminateBehavior="repeat"
+        android:indeterminateDrawable="@drawable/dialog_loading6"
+        android:background="@android:color/transparent" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnProgressBar"
+            android:text="控制系统进度"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

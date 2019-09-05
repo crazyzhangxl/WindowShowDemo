@@ -17,6 +17,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.windowshowdemo.dialogfragment.UpdateFragment;
+import com.example.windowshowdemo.loading.StaticLoadActivity;
 import com.example.windowshowdemo.model.EnjoyBean;
 
 import java.util.ArrayList;
@@ -74,6 +75,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnPhoto.setOnClickListener(this);
         like_yu.setOnClickListener(this);
         btnUpdate.setOnClickListener(this);
+
+        findViewById(R.id.btnStaticLoad).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                StaticLoadActivity.show(MainActivity.this);
+            }
+        });
 
     }
 

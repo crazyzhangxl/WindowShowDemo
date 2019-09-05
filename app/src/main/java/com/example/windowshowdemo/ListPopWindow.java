@@ -66,7 +66,6 @@ public class ListPopWindow extends PopupWindow{
         this.setContentView(window);
         this.setWidth(UIUtils.getScreenWidth(context));
         this.setHeight(UIUtils.getScreenHeight(context));
-        //this.setWindowLayoutMode(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
         this.setAnimationStyle(R.style.WindowStyle);
         this.setFocusable(true);
         this.setOutsideTouchable(true);
