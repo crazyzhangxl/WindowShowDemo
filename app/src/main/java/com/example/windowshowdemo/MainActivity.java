@@ -16,6 +16,8 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.example.windowshowdemo.dialog.ContentDialog;
+import com.example.windowshowdemo.dialog.DialogActivity;
 import com.example.windowshowdemo.dialogfragment.UpdateFragment;
 import com.example.windowshowdemo.loading.StaticLoadActivity;
 import com.example.windowshowdemo.model.EnjoyBean;
@@ -80,6 +82,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 StaticLoadActivity.show(MainActivity.this);
+            }
+        });
+
+        findViewById(R.id.dialogTheme).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // new ContentDialog(MainActivity.this,R.style.ShowDialog).show();
+                startActivity(new Intent(MainActivity.this, DialogActivity.class));
             }
         });
 
@@ -178,7 +188,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void showPurchaseView() {
         // 以特定的风格创建一个dialog
-        Dialog dialog = new Dialog(this,R.style.MyDialog);
+        Dialog dialog = new Dialog(this,R.style.ShowDialog);
         // 加载dialog布局view
         View purchase = LayoutInflater.from(this).inflate(R.layout.dialog_purchase, null);
         initPurchaseViews(purchase,dialog);

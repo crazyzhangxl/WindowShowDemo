@@ -80,6 +80,12 @@ tools:context="com.example.windowshowdemo.MainActivity">
                 android:id="@+id/btnUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+            <Button
+                android:textAllCaps="false"
+                android:text="dialog样式效果"
+                android:id="@+id/dialogTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"

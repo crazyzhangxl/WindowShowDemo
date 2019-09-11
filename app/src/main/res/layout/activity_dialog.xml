@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dialog.DialogActivity">
+    <LinearLayout
+        android:id="@+id/head"
+        android:orientation="vertical"
+        android:background="@color/red0"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:background="@color/red0"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+    </LinearLayout>
+    <ScrollView
+        android:layout_below="@id/head"
+        android:layout_above="@id/bottom"
+        android:overScrollMode="never"
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="头"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+            <TextView
+                android:text="中1"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+            <TextView
+                android:text="中2"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+            <TextView
+                android:text="中3"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+            <TextView
+                android:id="@+id/btnSHow"
+                android:text="中4"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+            <TextView
+                android:id="@+id/btnNext"
+                android:text="中5"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+            <TextView
+                android:text="中6"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+            <TextView
+                android:text="中7"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+            <TextView
+                android:text="尾"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

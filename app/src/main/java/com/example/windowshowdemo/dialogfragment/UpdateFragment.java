@@ -23,7 +23,7 @@ public class UpdateFragment extends BaseDialogFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        setLocal(Local.CENTER);
+        setLocal(Local.BOTTOM);
         super.onCreate(savedInstanceState);
     }
 

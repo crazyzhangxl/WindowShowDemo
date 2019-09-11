@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.windowshowdemo.R;
+import com.example.windowshowdemo.toast.MyToast;
 
 /**
  * 静态进度条活动...
@@ -39,6 +41,21 @@ public class StaticLoadActivity extends AppCompatActivity {
                 }else {
                     mProgressBar.setVisibility(View.VISIBLE);
                 }
+            }
+        });
+
+        findViewById(R.id.btnNative).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(StaticLoadActivity.this, "发送成功", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        findViewById(R.id.btnCustom).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyToast.showText(StaticLoadActivity.this,"发送成功").show();
+
             }
         });
     }
