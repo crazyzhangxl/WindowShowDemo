@@ -97,7 +97,6 @@ tools:context="com.example.windowshowdemo.MainActivity">
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
-
         <TextView
             android:id="@+id/tvAddress"
             android:layout_marginTop="25dp"
@@ -119,6 +118,16 @@ tools:context="com.example.windowshowdemo.MainActivity">
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:text="pop学习"
+                android:id="@+id/btnPop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
 <!-- 弹出框布局 上部分为灰色-->
@@ -163,5 +172,4 @@ tools:context="com.example.windowshowdemo.MainActivity">
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
-
 </android.support.design.widget.CoordinatorLayout>

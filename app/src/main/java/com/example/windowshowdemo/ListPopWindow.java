@@ -151,14 +151,14 @@ public class ListPopWindow extends PopupWindow{
             if (Build.VERSION.SDK_INT >= 24) {
                 Rect rect = new Rect();
                 anchor.getGlobalVisibleRect(rect);
-                int size = 0;
-                // 适配全面屏....
-                // 解决全面屏手机使用顶部弹窗带来的问题
                 if (DisplayHelper.isNavigationBarExist((Activity) context)){
-                    size = DisplayHelper.getNavMenuHeight(context);
+                    int h = anchor.getResources().getDisplayMetrics().heightPixels - rect.bottom;
+                    setHeight(h);
+                }else {
+                    //全面屏手机需要获取真实高度....
+                    int h = DisplayHelper.getRealScreenSize(context)[1] - rect.bottom;
+                    setHeight(h);
                 }
-                int h = DisplayHelper.getRealScreenSize(context)[1] - rect.bottom - size ;
-                setHeight(h);
             }
             super.showAsDropDown(anchor);
             isDismiss = false;

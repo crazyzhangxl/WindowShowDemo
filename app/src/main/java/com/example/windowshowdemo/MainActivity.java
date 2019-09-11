@@ -15,12 +15,11 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-
-import com.example.windowshowdemo.dialog.ContentDialog;
 import com.example.windowshowdemo.dialog.DialogActivity;
 import com.example.windowshowdemo.dialogfragment.UpdateFragment;
 import com.example.windowshowdemo.loading.StaticLoadActivity;
 import com.example.windowshowdemo.model.EnjoyBean;
+import com.example.windowshowdemo.popup.PopupWindowActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,11 +87,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.dialogTheme).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // new ContentDialog(MainActivity.this,R.style.ShowDialog).show();
                 startActivity(new Intent(MainActivity.this, DialogActivity.class));
             }
         });
 
+        findViewById(R.id.btnPop).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, PopupWindowActivity.class));
+            }
+        });
     }
 
     private void initView() {
