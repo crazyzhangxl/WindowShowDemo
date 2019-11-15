@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".like_qianchen.QianchengFilterActivity">
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:background="@color/red0"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+            <View
+                android:background="@color/bar_grey"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+            <View
+                android:background="@color/cardview_dark_background"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+            <View
+                android:background="@color/blue"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.example.windowshowdemo.like_qianchen.FilterHeadView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.example.windowshowdemo.like_qianchen.FilterHeadView>
+</FrameLayout>

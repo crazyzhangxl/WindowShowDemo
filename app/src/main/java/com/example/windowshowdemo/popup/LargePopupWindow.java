@@ -19,6 +19,11 @@ import com.example.windowshowdemo.R;
 /**
  * Created by apple on 2019-09-11.
  * description:适配全面屏解决版本过高，popupWindow的位置不在控件下方的问题
+ *
+ * 注意是可以设置pop窗体样式的，当然这是我们不设置其整体背景的情况下，也就是背景透明时；
+ * 而当背景灰度再设置其动画，致使其灰度窗体效果不佳
+ *
+ * (任意位置弹窗效果)
  */
 public class LargePopupWindow extends PopupWindow {
     private View mRootView;
@@ -35,7 +40,8 @@ public class LargePopupWindow extends PopupWindow {
         //设置点击外部可消失
         setOutsideTouchable(true);
         // 设置窗口样式
-        this.setAnimationStyle(R.style.WindowStyle);
+        // 整体窗体样式附属了遮层，需要考虑设置..
+        // this.setAnimationStyle(R.style.WindowStyle);
         setBackgroundDrawable(new ColorDrawable(Color.argb(123, 0, 0, 0)));
         update();
         this.context = context;

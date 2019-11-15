@@ -17,6 +17,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import com.example.windowshowdemo.dialog.DialogActivity;
 import com.example.windowshowdemo.dialogfragment.UpdateFragment;
+import com.example.windowshowdemo.like_qianchen.QianchengFilterActivity;
 import com.example.windowshowdemo.loading.StaticLoadActivity;
 import com.example.windowshowdemo.model.EnjoyBean;
 import com.example.windowshowdemo.popup.PopupWindowActivity;
@@ -95,6 +96,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, PopupWindowActivity.class));
+            }
+        });
+
+        findViewById(R.id.filterNext).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, QianchengFilterActivity.class));
             }
         });
     }

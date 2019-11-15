@@ -13,7 +13,6 @@ import android.view.WindowManager;
 
 /**
  * @author crazyZhangxl on 2018/10/25.
- * Describe:
  */
 
 public class BottomDialog extends BottomSheetDialog {

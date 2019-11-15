@@ -80,7 +80,7 @@
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
         <item name="android:windowAnimationStyle">@style/BottomDialog.AnimationStyle</item>
-        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:backgroundDimAmount">0.6</item>
     </style>
 
     <style name="CenterDialog" parent="@android:style/Theme.Dialog">
@@ -94,6 +94,7 @@
         <item name="android:colorBackgroundCacheHint">@null</item>
         <item name="android:windowAnimationStyle">@style/CenterDialogAnimationStyle</item>
         <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:backgroundDimAmount">0.6</item>
     </style>
 
     <style name="BottomDialog.AnimationStyle" parent="android:Animation">
@@ -131,5 +132,11 @@
         <item name="android:backgroundDimEnabled">true</item>
         <item name="android:backgroundDimAmount">0.6</item>
     </style>
+
+    <style name="popAnimation">
+        <item name="android:windowEnterAnimation">@anim/push_top_in</item>
+        <item name="android:windowExitAnimation">@anim/push_top_out</item>
+    </style>
+
 
 </resources>

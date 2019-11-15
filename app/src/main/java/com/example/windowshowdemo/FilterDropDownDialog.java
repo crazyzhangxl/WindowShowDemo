@@ -31,8 +31,9 @@ public class FilterDropDownDialog extends FrameLayout implements View.OnClickLis
         super(context);
         initView(context);
         mTextView = textView;
-        // 将布局加入
-        frameLayout.addView(this,new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+        // 将布局加入,也就是将遮层布局放置在该布局之上
+        frameLayout.addView(this,
+                new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
     }
 
     private void initView(Context mContext) {

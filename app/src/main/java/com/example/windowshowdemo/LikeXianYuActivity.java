@@ -73,7 +73,7 @@ public class LikeXianYuActivity extends AppCompatActivity {
         mTVDes = findViewById(R.id.tvDes);
 
         Drawable dbHome = getResources().getDrawable(R.drawable.selector_home);
-        dbHome.setBounds(0, 0, 40, 40);
+        dbHome.setBounds(0, 0, UIUtils.dipTopx(this,40), UIUtils.dipTopx(this,40));
         mRbHome.setCompoundDrawables(null, dbHome, null, null);
 
         Drawable dbPond = getResources().getDrawable(R.drawable.selector_pond);

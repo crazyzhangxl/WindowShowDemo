@@ -21,17 +21,19 @@ tools:context="com.example.windowshowdemo.MainActivity">
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <Button
-            android:text="Dialog形式"
+            android:text="dialog clipChildren淘宝购买页"
             android:id="@+id/btnDialog"
+            android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
-            android:text="DialogFragment形式"
+            android:text="DialogFragment实现爱好选择"
             android:id="@+id/btnDgFm"
+            android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
-            android:text="普通布局形式"
+            android:text="普通布局动画显示隐藏实现遮层效果"
             android:id="@+id/normalShow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -41,17 +43,12 @@ tools:context="com.example.windowshowdemo.MainActivity">
             android:layout_height="wrap_content">
             <Button
                 android:textAllCaps="false"
-                android:text="BottomSheetDialog"
+                android:text="BottomSheetDialog实现条目选择效果"
                 android:id="@+id/btnSheet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <Button
-                android:text="拍照"
-                android:id="@+id/btnPhoto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <Button
-                android:text="仿咸鱼底部"
+                android:text="仿咸鱼底部菜单效果"
                 android:id="@+id/like_yu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -61,22 +58,59 @@ tools:context="com.example.windowshowdemo.MainActivity">
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
-                android:text="顶部弹框"
+                android:text="仿ios拍照选择效果"
+                android:id="@+id/btnPhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:layout_marginLeft="10dp"
+                android:background="@color/red0"
+                android:layout_width="4dp"
+                android:layout_height="20dp"/>
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:text="顶部筛选效果"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:textAllCaps="false"
+                android:text="popupwindow方式实现"
                 android:id="@+id/popShow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <Button
-                android:text="顶部弹框View"
+                android:text="自定义View方式实现"
                 android:id="@+id/topShow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/filterNext"
+            android:text="自定义筛选"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
-                android:text="更新"
+                android:textAllCaps="false"
+                android:text="DialogFragment实现更新弹窗"
                 android:id="@+id/btnUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
