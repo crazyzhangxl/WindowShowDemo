@@ -1,7 +1,9 @@
 # WindowShowDemo
 1、简介
 
-本文将介绍的是从底部弹出窗体以供用户进行交互的例子，本文将介绍使用Dialog,View和DialogFragment的方式分别来进行实现。也是仿制了58同城的弹出喜好的UI显示和交互。弹出框真的是很常见的，在安卓中有广泛的用途，故而有必要对其进行好好的梳理，后面使用起来也能够得心应手。<br>
+本文将主要介绍Android常见的窗体效果。包括Dialog,DialogFragment,PopupWindow,BottomSheetDialog以及自定义view实现弹窗等效果。
+附属包含进度条效果以及自定义Toast。<br>
+案例包含，dialog仿淘宝购买页,dialogFragment实现仿爱好选择，popupwindow实现拍照选择，bottomsheetDialog实现条目选择，chipChildren实现仿咸鱼添加菜单效果，dialog实现仿ios拍照选择，自定义view背景和布局方式实现顶部筛选效果，DialogFragment实现弹窗更新效果，自定义dialog效果，建造者模式模仿AlertDialog，进度条效果等<br>
 
 [apk下载](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/release/app-release.apk)<br>
 
