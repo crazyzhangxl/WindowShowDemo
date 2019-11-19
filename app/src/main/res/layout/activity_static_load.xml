@@ -77,12 +77,14 @@
         android:layout_height="wrap_content">
         <Button
             android:id="@+id/btnCustom"
-            android:text="自定义"
+            android:text="自定义Toast"
+            android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
             android:id="@+id/btnNative"
-            android:text="系统"
+            android:text="系统Toast"
+            android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>

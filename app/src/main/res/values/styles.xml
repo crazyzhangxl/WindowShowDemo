@@ -81,6 +81,8 @@
         <item name="android:colorBackgroundCacheHint">@null</item>
         <item name="android:windowAnimationStyle">@style/BottomDialog.AnimationStyle</item>
         <item name="android:backgroundDimAmount">0.6</item>
+        <item name="android:backgroundDimEnabled">true</item>
+
     </style>
 
     <style name="CenterDialog" parent="@android:style/Theme.Dialog">
@@ -95,6 +97,8 @@
         <item name="android:windowAnimationStyle">@style/CenterDialogAnimationStyle</item>
         <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
         <item name="android:backgroundDimAmount">0.6</item>
+        <!-- 是否允许背景灰度 -->
+        <item name="android:backgroundDimEnabled">true</item>
     </style>
 
     <style name="BottomDialog.AnimationStyle" parent="android:Animation">
