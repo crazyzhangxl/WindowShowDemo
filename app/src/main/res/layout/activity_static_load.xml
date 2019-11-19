@@ -61,6 +61,12 @@
         android:indeterminateBehavior="repeat"
         android:indeterminateDrawable="@drawable/dialog_loading6"
         android:background="@android:color/transparent" />
+    <ImageView
+        android:layout_gravity="center"
+        tools:tint="#666"
+        android:id="@+id/ivProgress"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"

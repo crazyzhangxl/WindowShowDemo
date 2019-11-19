@@ -2,10 +2,13 @@ package com.example.windowshowdemo.loading;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Animatable;
+import android.graphics.drawable.AnimationDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -19,6 +22,8 @@ public class StaticLoadActivity extends AppCompatActivity {
 
     private ProgressBar mProgressBar;
     private Button mBtnProgressBar;
+    private ImageView ivProgress;
+    private ProgressDrawable mProgressDrawable;
     public static void show(Activity activity){
         Intent intent = new Intent(activity,StaticLoadActivity.class);
         activity.startActivity(intent);
@@ -63,5 +68,17 @@ public class StaticLoadActivity extends AppCompatActivity {
     private void initViews() {
         mProgressBar = findViewById(R.id.progressbar);
         mBtnProgressBar = findViewById(R.id.btnProgressBar);
+        ivProgress = findViewById(R.id.ivProgress);
+
+        mProgressDrawable = new ProgressDrawable();
+        mProgressDrawable.setColor(0xff666666);
+        ivProgress.setImageDrawable(mProgressDrawable);
+        ((Animatable)(ivProgress.getDrawable())).start();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ((Animatable)(ivProgress.getDrawable())).start();
     }
 }
