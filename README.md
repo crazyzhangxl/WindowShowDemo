@@ -19,7 +19,7 @@
 &#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/ios.png)
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;     
       &#160;&#160;&#160;&#160;&#160;&#8194;&#8194;&#8194;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/xianyu2.gif)&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/popup.png)<br><br>
-      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/progress.png)
+      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;![image](https://github.com/crazyzhangxl/WindowShowDemo/blob/master/app/screenshots/progress.png)<br><br>
 2.1 Dialog形式
 
 注释写的还是很清晰的，如下。
